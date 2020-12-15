@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>OOP Admin Web App</display-name>
+ 
+  <servlet>
+    <servlet-name>AddAdminServlet</servlet-name>
+    <servlet-class>com.oop.servlet.AddAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateAdminServlet</servlet-name>
+    <servlet-class>com.oop.servlet.UpdateAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteAdminServlet</servlet-name>
+    <servlet-class>com.oop.servlet.DeleteAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetAdminServlet</servlet-name>
+    <servlet-class>com.oop.servlet.GetAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListAdminServlet</servlet-name>
+    <servlet-class>com.oop.servlet.ListAdminServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>AddAdminServlet</servlet-name>
+    <url-pattern>/AddAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateAdminServlet</servlet-name>
+    <url-pattern>/UpdateAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteAdminServlet</servlet-name>
+    <url-pattern>/DeleteAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetAdminServlet</servlet-name>
+    <url-pattern>/GetAdminServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>ListAdminServlet</servlet-name>
+    <url-pattern>/ListAdminServlet</url-pattern>
+  </servlet-mapping>
+ 
+ 
+  <welcome-file-list>
+    <welcome-file>homeView.html</welcome-file>
+    <welcome-file>homeView.htm</welcome-file>
+    <welcome-file>homeView.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>

@@ -1,0 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "Admin.css" />
+
+<meta charset="UTF-8">
+<title>SLIIT OOP Admin Management</title>
+</head>
+<body class="body">
+
+	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+
+	<h2 class="h2">Add Admin Page</h2>
+
+	   SLIIT Admin Management App for Object Orineted Progrmming
+	<br>
+	<br>
+
+	<form method="POST" action="AddAdminServlet">
+		<table>
+			<tr>
+			<td>Index Number</td>
+				<td><input type="text" name="indexID" disabled="disabled" /></td>
+			</tr>
+			<tr>
+				<td>Customer ID</td>
+				<td><input type="text" name="customerID" /></td>
+			</tr>
+			<tr>
+				<td>Customer Name</td>
+				<td><input type="text" name="customerName" /></td>
+			</tr>
+			<tr>
+				<td>Driver Name</td>
+				<td><input type="text" name="driverName"/></td>
+			</tr>
+			<tr>
+				<td>Vehicle Number</td>
+				<td><input type="text" name="vehicleNumber" /></td>
+			</tr>
+			<tr>
+				<td>Amount</td>
+				<td><input type="text" name="amount"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Add Admin" class="add-button" /> </td>
+			</tr>
+			<tr>	
+				<td colspan="2"><input type="reset" value="Reset" class="reset-button" /></td>
+			</tr>
+		</table>
+	</form>
+
+	<form method="POST" action="ListAdminServlet">
+		<table>
+			<tr>
+				<td colspan="2"><input type="submit" value="List All Admins" class="list-button" />
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
+
+</body>
+</html>

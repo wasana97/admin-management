@@ -1,0 +1,64 @@
+<%@page import="com.oop.model.Admin"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.oop.service.AdminServiceImpl"%>
+<%@page import="com.oop.service.IAdmintService"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "Admin.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>SLIIT OOP Admin Management</title>
+</head>
+<body>
+	<h3>List of Admins</h3>
+	SLIIT Admin Management App for OOP jsp servlet.
+	<br>
+	<br>
+	  <div align="left">
+		<table border="1" cellpadding="12">
+		 <caption><h2>List of Admins</h2></caption>
+		 <a href="homeView.jsp">Add Admin</a>
+		  <tr>
+                <th>Index Number</th>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Driver Name</th>
+                <th>Vehicle Number</th>
+                <th>Amount</th>
+                <th>Select</th>
+            </tr>
+            <%
+            	IAdmintService iAdminService = new AdminServiceImpl();
+                                                                        	ArrayList<Admin> arrayList = iAdminService.getAdmins();
+                                                                        	
+                                                                        	for(Admin admin : arrayList){
+            %>
+			 <tr>
+				<td> <%=admin.getAdminID() %> </td>
+				<td> <%=admin.getCustermorID() %> </td>
+				<td> <%=admin.getCustemorName() %> </td>
+				<td> <%=admin.getDriverName() %> </td>
+				<td> <%=admin.getVehicleNumber() %> </td>
+				<td> <%=admin.getAmount() %> </td>
+				
+				<td> 
+				<form method="POST" action="GetAdminServlet">
+				<input type="hidden" name="adminID" value="<%=admin.getAdminID()%>"/>
+				 <input type="submit" value= "Select Admin" class="select-button" /> 
+				 </form>
+				 </td>	
+				</tr>			
+			<%	
+			   }
+            %>     
+		</table>
+		</div>
+		
+</body>
+</html>

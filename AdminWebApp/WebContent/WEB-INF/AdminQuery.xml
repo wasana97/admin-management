@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- by Udara Samaratunge Department of Software Engineering OOP 
+	SQL queries -->
+<Querys>
+
+	<!-- Create table admin Query -->
+	<query id="create_admin_table">
+        <![CDATA[
+            CREATE TABLE admin(
+				indexID varchar(10) not null,
+				customerID varchar(15),
+				customerName varchar(20),
+				driverName varchar(15),
+				vehicleNumber  varchar(50),
+				amount varchar(20),
+				primary key (indexID)
+			)
+        ]]>
+	</query>
+
+	<!-- DROP TABLE EMPLOYEES Query -->
+	<query id="drop_table">
+         <![CDATA[        
+            DROP TABLE IF EXISTS admin 
+        ]]>
+	</query>
+
+	<!-- Select all customer orders Query -->
+	<query id="insert_admin">
+        <![CDATA[
+          	insert into admin (indexID,customerID,customerName, driverName, vehicleNumber, amount) 
+          	values (?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular admin by id Query -->
+	<query id="admin_by_id">
+         <![CDATA[        
+            select * from admin where admin.indexID = ?
+        ]]>
+	</query>
+
+	<!-- Select all admins -->
+	<query id="all_admins">
+         <![CDATA[        
+            select * from admin
+        ]]>
+	</query>
+
+	<!-- Delete a particular admin by id Query -->
+	<query id="remove_admin">
+         <![CDATA[        
+            delete from admin where admin.indexID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular admin by id Query -->
+	<query id="update_admin">
+         <![CDATA[        
+            update admin as p 
+            set p.indexID = ?, p.customerID = ?, p.customerName = ?, p.driverName = ?, p.vehicleNumber = ?, p.amount = ? 
+            where p.indexID = ?
+        ]]>
+	</query>
+	
+		<!-- Get index IDs Query -->
+	<query id="index_ids">
+         <![CDATA[        
+            select p.indexID from admin as p
+        ]]>
+	</query>
+
+</Querys>
